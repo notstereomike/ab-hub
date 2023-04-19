@@ -1,0 +1,86 @@
+
+@font-face {
+    font-family: 'Gravity';
+    src: url('./fonts/Gravity-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gravity';
+    src: url('./fonts/Gravity-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: 'Gravity', Arial, sans-serif;
+}
+
+
+
+header {
+    background-color: rgb(51, 120, 157);
+    padding: 10px;
+}
+
+header h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.square-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.square {
+    display: flex;
+    flex-direction: column;
+    max-width: 75%;
+    margin: 0 auto;
+    align-items: center;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.square img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.square p {
+    margin-top: 15px;
+    font-size: 18px;
+    text-align: center;
+}
+
+footer {
+    background-color: rgb(102, 186, 232);
+    padding: 10px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    color: #fff;
+}
