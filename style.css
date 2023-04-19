@@ -21,10 +21,15 @@ body {
 }
 
 .container {
-    display: grid; 
-    grid-template-rows: 1fr auto;
-    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
+main {
+    flex: 1;
+}
+
 .top-image {
     display: block;
     max-width: 80%;
