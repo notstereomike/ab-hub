@@ -13,6 +13,21 @@
     font-style: normal;
 }
 
+.title-1 {
+    display: flex;
+    color: #fff;
+    font-size: 20px;
+    
+}
+.title {
+    display:flex;
+    color: #fff;
+    font-size: 32px;
+    padding-bottom: 125px;
+    
+
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
