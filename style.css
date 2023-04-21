@@ -31,7 +31,7 @@
     display: flex;
     max-width: 60%;
     margin: 20px auto;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     object-fit: contain;
 }
 body {
