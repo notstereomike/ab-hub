@@ -29,10 +29,10 @@
 
 .top-image {
     display: flex;
-    max-width: 50%;
-    max-height: 50%;
+    max-width: 60%;
     margin: 20px auto;
     padding-bottom: 50px;
+    object-fit: contain;
 }
 body {
     margin: 0;
