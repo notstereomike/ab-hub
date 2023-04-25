@@ -110,3 +110,84 @@ footer p {
     margin: 0;
     color: #fff;
 }
+
+
+
+table td,
+table th {
+    border: 1px solid #fff;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+/* Border Colour */
+table, th, td {
+border: 2px solid #fff;
+text-align: center;
+}
+
+th, td {
+padding: 8px;
+color: #fff;
+}
+
+th {
+background-color: #333;
+color: #fff;
+}
+
+h2, h3 {
+    color: #fff;
+    text-align: center;
+}
+   
+/* Responsive styles for mobile */
+@media screen and (max-width: 768px) {
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table th, table td {
+        white-space: nowrap;
+    }
+
+    /* Add a scrollbar for mobile */
+    ::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 3px;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+     /* Fix the position of the first column */
+     table th:first-child,
+     table td:first-child {
+         position: sticky;
+         left: 0;
+         top: 0;
+         z-index: 2;
+         background-color: #333;
+         
+     }
+     
+     
+}
