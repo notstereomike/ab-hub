@@ -9,6 +9,16 @@
   <script src="https://unpkg.com/aframe-link-component@1.0.0/dist/aframe-link-component.min.js"></script>
 
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BLL88P0WTZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BLL88P0WTZ');
+</script>
+
 <body style="margin: 0; overflow: hidden;">
   <a-scene
     arjs="sourceType: webcam; debugUIEnabled: false;"
@@ -17,7 +27,7 @@
     
   
     <!-- Marker 1 -->
-    <a-marker preset="custom" type="pattern" url="https://notstereomike.github.io/abuk-seat-ar/assets/pattern-1.patt">
+    <a-marker preset="custom" type="pattern" url="https://ab-hub.co.uk/ar-patterns/pattern-1.patt">
       <a-entity rotation="-90 0 0">
         <a-entity a-link="href: https://example.com; title: Airbase UK Interiors\nmanufacture Headrests\nMarker 1"
           color="black"
@@ -30,7 +40,7 @@
     </a-marker>
 
     <!-- Marker 2 -->
-    <a-marker preset="custom" type="pattern" url="https://notstereomike.github.io/abuk-seat-ar/assets/pattern-2.patt">
+    <a-marker preset="custom" type="pattern" url="https://ab-hub.co.uk/ar-patterns/pattern-2.patt">
       <a-entity rotation="-90 0 0">
         <a-entity a-link="href: https://example.com; title: Airbase UK Interiors\nmanufacture Life Vest Pouches\nMarker 2"
           color="black"
@@ -43,7 +53,7 @@
     </a-marker>
 
     <!-- Marker 3 -->
-    <a-marker preset="custom" type="pattern" url="https://notstereomike.github.io/abuk-seat-ar/assets/pattern-3.patt">
+    <a-marker preset="custom" type="pattern" url="https://ab-hub.co.uk/ar-patterns/pattern-3.patt">
       <a-entity rotation="-90 0 0">
         <a-entity a-link="href: https://example.com; title: Airbase UK Interiors\nmanufacture Seat Covers\nMarker 3"
           color="black"
