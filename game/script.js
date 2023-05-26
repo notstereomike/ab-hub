@@ -33,6 +33,10 @@ const firebaseConfig = {
   
     console.log('New score key:', newScoreKey); // Log the new score key
   
+    // Get the state of the consent checkbox
+    const consentCheckbox = document.getElementById('consent-checkbox');
+    const consentGiven = consentCheckbox.checked;  // This will be either true or false
+  
     // Create the data we want to update
     const scoreData = {
       name: name,
@@ -40,6 +44,7 @@ const firebaseConfig = {
       email: email,
       score: score,
       date: firebase.database.ServerValue.TIMESTAMP,
+      consent: consentGiven,  // Add consent status to your data
     };
   
     console.log('Score data:', scoreData); // Log the score data
@@ -69,6 +74,7 @@ const firebaseConfig = {
     const nameInput = document.getElementById('name');
     const companyInput = document.getElementById('company');
     const emailInput = document.getElementById('email');
+    const consentCheckbox = document.getElementById('consent-checkbox');  // Get the consent checkbox
     const submitButton = document.getElementById('game-over-submit-button');
     const cancelButton = document.getElementById('game-over-cancel-button');
   
@@ -81,6 +87,7 @@ const firebaseConfig = {
       const userName = nameInput.value;
       const userCompany = companyInput.value;
       const userEmail = emailInput.value;
+      const consentGiven = consentCheckbox.checked;  // Get the state of the consent checkbox
   
       // Call submitScore
       submitScore(userName, userCompany, userEmail, score);
@@ -89,6 +96,7 @@ const firebaseConfig = {
       nameInput.value = '';
       companyInput.value = '';
       emailInput.value = '';
+      consentCheckbox.checked = false;  // Reset the checkbox state
   
       // Hide the game over overlay
       gameOverOverlay.style.display = 'none';
@@ -247,11 +255,17 @@ const firebaseConfig = {
   
   // Function to add score to leaderboard
   function addScoreToLeaderboard(name, company, email, score) {
+    
+    const consentCheckbox = document.getElementById('consent-checkbox');
+    const consentGiven = consentCheckbox.checked;  // This will be either true or false
+
+    
     const leaderboardEntry = {
       name,
       company,
       email,
       score,
+      consent: consentGiven, // Add consent status to your data
     };
   
     const newScoreKey = database.ref('/scores').push().key;

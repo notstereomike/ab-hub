@@ -7,6 +7,7 @@
   <title>Snake Game</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link rel="stylesheet" href="./styles.css?v=3">
+  <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -20,6 +21,15 @@
   <!-- Firebase Database (Realtime) -->
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BLL88P0WTZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BLL88P0WTZ');
+</script>
 
 <body>
   <header>
@@ -40,11 +50,14 @@
       <h2>Welcome to Snake!</h2>
       <p>How to play:</p>
       <p>Use arrow keys or the buttons to control the snake.</p>
-      <p>Eat the A's to score points.</p>
+      <p>Eat the Airbase Logo's to score points.</p>
       <p>Avoid hitting the walls or the snake itself.</p>
       <p>Make it to the top of the leaderboard to win my love & respect!</p>
-      <button id="start-button">Start</button><br>
-      <button id="back-button">Back</button>
+      <button id="start-button">Start</button><br><br>
+      <a href="../index.html" class="square">
+                
+        <p>Home</p>
+    </a>
     </div>
   </div>
 
@@ -59,20 +72,29 @@
       <label for="email">Email:</label>
       <input type="email" id="email" placeholder="Enter your email" required>
       <div class="consent-container">
+        
+        <label for="consent-checkbox">Submitting this form will store your details for leader board purposes.<br> <br>Airbase would like to keep you up to date on latest news and industry updates. Please tick this box if you <u>do not</u> wish to receive emails from us</label>
         <input type="checkbox" id="consent-checkbox" required>
-        <label for="consent-checkbox">I consent to the collection of my information</label>
-      </div>      
+    </div>      
       <div class="button-container">
         <button id="submit-button">Submit</button>
         <button id="cancel-button">Cancel</button>
+        <a href="./files/privacy-policy.pdf" target="_blank" class="link">
+                
+            <p>Privacy Policy</p>
+        </a>
       </div>
     </div>
   </div>
   
   <div id="thanks-overlay" class="overlay">
     <div class="popup">
-      <h2>Thanks! Do you want to try again?</h2>
-      <button id="restart-button">Restart</button>
+      <h2>Thanks!<br> <br>Do you want to try again?</h2>
+      <button id="restart-button">Restart</button><br><br>
+      <a href="../index.html" class="square">
+                
+        <p>Home</p>
+    </a>
     </div>
   </div>
 
@@ -103,5 +125,7 @@
   <script src="./script.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script> <!-- Add this line for Firebase Analytics -->
 </body>
-
+<footer>
+    <p>&copy; 2023 Airbase UK Interiors v0.9.3</p>
+</footer>
 </html>
