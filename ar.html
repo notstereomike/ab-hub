@@ -6,8 +6,9 @@
   <title>Seat AR</title>
   <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+ <!---- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script> -->
   <script src="https://unpkg.com/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
   <script>
     function closePopup() {
       document.getElementById('popup').style.display = 'none';
@@ -38,10 +39,12 @@
       padding: 20px;
       box-sizing: border-box;
       overflow: auto;
+      font-family: Arial, sans-serif;
     }
     
     .popup h2 {
       font-size: calc(15px + 3vmin);
+      
     }
     
     .popup p {
@@ -60,18 +63,20 @@
       border: none;
     }
     
-    .home-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      padding: 10px 20px;
-      z-index: 999;
-      font-size: calc(10px + 2vmin);
-      background-color: rgba(255, 255, 255, 0.7);
-      color: #33789D;
-      border: none;
-      border-radius: 50px;
-      display: none;
+.home-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  z-index: 999;
+  font-size: calc(10px + 2vmin);
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #33789D;
+  border: none;
+  border-radius: 50px;
+  display: none;
+  font-family: Arial, sans-serif;
     }
     </style>
     
@@ -100,41 +105,34 @@
 <body style='margin : 0px; overflow: hidden;'>
 
   <div class="popup" id="popup">
-    <h2>Welcome to Airbase UK Interiors AR Experience</h2>
-    <p>Point your phone's camera at the markers to explore a magical journey into the world of seat manufacturing. Discover the intricate process of creating life vest pouches and headrests, brought to life through the power of augmented reality!</p>
-    <button onclick="closePopup()">Close</button>
-    <button onclick="goHome()">Back</button>
+    <h2>Welcome to Airbase UK Interiors AR Experience</h2><br>
+    <p>Point your phone's camera at the markers to explore augmented reality.<br><br> Discover some of the services we provide, brought to life through the power of AR!</p>
+    <button onclick="closePopup()">Go to AR</button><br>
+    <button onclick="goHome()">Home</button>
   </div>
   <button class="home-button" id="home-button" onclick="goHome()">Home</button>
    
 	<a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+    <a-assets>
+      <a-asset-item id="model" src="./assets/seat157.glb"></a-asset-item>
+    </a-assets>
     
-    
-    <!-- Hiro marker -->
-<a-marker type='pattern' url='https://jeromeetienne.github.io/AR.js/data/data/patt.hiro'>
-			<a-box position='0 0.5 0' material='color: #33789D; opacity: 0.5;'></a-box>
-	<a-text
-  value="Airbase UK Interiors\nManufacture Life Vest Pouches\n"
-  color="white"
-  position="-1 2 0"
-  rotation="-90 0 0"
-  text-align="center"
-  </a-text>
-</a-marker>
+   <!--<a-light type="ambient" intensity="3" color="#FFF"></a-light> -->
+   <a-light type="directional" color="#FFF" intensity="5" position="5 5 5"></a-light>  
 
-    <!-- Kanji marker -->
-<a-marker type='pattern' url='https://jeromeetienne.github.io/AR.js/data/data/patt.kanji'>
-	<a-box position='0 0.5 0' material='color: #33789D; opacity: 0.5;'></a-box>
-  <a-text
-  value="Airbase UK Interiors\nManufacture Headrests\n"
-  color="white"
-  position="-1 2 0"
-  rotation="-90 0 0"
-  text-align="center"
-  </a-text>
-</a-marker>
+    
+
+  <!-- Kanji marker -->
+  <a-marker type='pattern' url='https://jeromeetienne.github.io/AR.js/data/data/patt.kanji'>
+    <a-entity gltf-model="#model" scale="5 5 5" position="0 0 0"></a-entity>
+
+    <!-- Your text and arrows here -->
+  </a-marker>
+      
+      
 
 		<a-entity camera></a-entity>
 	</a-scene>
+
 </body>
 </html>
